@@ -11,8 +11,7 @@ SCC <- readRDS("Source_Classification_Code.rds")
 
 ## Q1 plot
 
-NEI %>% filter(year %in% c("1999","2002","2005","2008")) %>% 
-  group_by(year) %>%
+NEI %>% group_by(year) %>%
   summarise(TotalEmmisions = sum(Emissions)) -> Q1_df
 
 with(Q1_df, plot(year, TotalEmmisions
