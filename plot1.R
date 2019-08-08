@@ -15,7 +15,9 @@ NEI %>% filter(year %in% c("1999","2002","2005","2008")) %>%
   group_by(year) %>%
   summarise(TotalEmmisions = sum(Emissions)) -> Q1_df
 
-with(Q1_df, plot(year, TotalEmmisions, type="l"))
+with(Q1_df, plot(year, TotalEmmisions
+                 , type="l"
+                 , main = "Total emissions from PM2.5 in the United States"))
 
 dev.copy(png, "plot1.png", height=480, width=480)
 dev.off()
